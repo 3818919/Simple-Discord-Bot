@@ -53,7 +53,7 @@ async def on_message(message):
 
   guild = message.guild
   if guild:
-      path = "chatlogs/{}.txt".format(guild.id)  
+      path = "chatlogs/{}.txt".format(guild.name)  
       with open(path, 'a+') as f:
           print("{0.author.name} : {0.content}".format(message), file=f)
       await bot.process_commands(message)
